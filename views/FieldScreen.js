@@ -4,8 +4,16 @@ import Header from '../components/Header'
 import Table from '../components/Table'
 import Field from '../components/Field'
 
-const FieldScreen = () => {
-    const [data, setData] = useState([
+// const generateInitialTable (throws) => {
+//     return ( 
+//         for (let i = 0; i < throws; i++) {
+
+//     }
+//     )
+// }
+
+const FieldScreen = ( maxThrows ) => {
+    const [tableData, setTableData] = useState([
         {
             number: '',
             throw: 'Throws',
@@ -13,6 +21,10 @@ const FieldScreen = () => {
             points: 'Points',
         },
     ])
+
+    const updateTableData = (data) => {
+        setTableData([...tableData, data])
+    }
 
     let competitionName = 'Competition name'
     return (
@@ -24,14 +36,14 @@ const FieldScreen = () => {
             </View>
             <View style={styles.middleContainer}>
                 <View style={styles.middleLeft}>
-                    <Table />
+                    <Table data={tableData} />
                 </View>
                 <View style={styles.middleRight}>
                     
                 </View>
             </View>
             <View style={styles.lowerContainer}>
-                <Field />
+                <Field onUpdateData={updateTableData} />
             </View>
         </View>
     )

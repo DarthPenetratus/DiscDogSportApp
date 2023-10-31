@@ -1,18 +1,13 @@
 import React, { useState } from 'react'
 import { View, TouchableOpacity, StyleSheet } from 'react-native'
 
-const Field = ({ dataInput }) => {
-    const [pressedButton, setPressedButton] = useState(null)
-    const [data, setData] = useState([
-        {
-            number: '',
-            throw: 'Throws',
-            distance: 'Distance',
-            points: 'Points',
-        },
-    ])
 
+let counter = 0;
+const Field = ({ onUpdateData }) => {
+    const [pressedButton, setPressedButton] = useState(null)
+    
     const onPress = ( index ) => {
+        counter++
         if (index <= 15)
             points = 0;
         if (index > 15 && index <= 25)
@@ -21,19 +16,17 @@ const Field = ({ dataInput }) => {
             points = 2;
         if (index > 35)
             points = 3;
-        const newData = [
-            ...data,
-            {
-                number: `${data.length}`,
-                throw: '✔️',
-                distance: `${index}`,
-                points: `${points}`,
-            },
-        ]
-        setData(newData)
-        console.log(newData)
+        const data = {
+            number: `${counter}`,
+            throw: '✔️',
+            distance: `${index}`,
+            points: `${points}`,
+        }
+        
 
         setPressedButton(index)
+        onUpdateData(data)
+        console.log(data)
     }
 
     const buttons = []
