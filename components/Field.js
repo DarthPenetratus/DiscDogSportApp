@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         borderStyle: 'solid',
-        backgroundColor: 'red'
+        backgroundColor: '#0AA6D7'
     }
 })
 
