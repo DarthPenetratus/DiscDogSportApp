@@ -1,23 +1,4 @@
-// // Import the functions you need from the SDKs you need
-// import { initializeApp } from 'firebase/app';
-// import { getFirestore } from 'firebase/firestore';
 
-// // Your web app's Firebase configuration
-// const firebaseConfig = {
-//   apiKey: "AIzaSyB_AkW56TYAfNEGBkacpVNfufmMuZItSL4",
-//   authDomain: "disco-dog.firebaseapp.com",
-//   projectId: "disco-dog",
-//   storageBucket: "disco-dog.appspot.com",
-//   messagingSenderId: "318181167626",
-//   appId: "1:318181167626:web:d479fd48dceadefec985f3",
-//   measurementId: "G-2VEMKNZ7VX"
-// };
-
-// // Initialize Firebase
-// const firebaseApp = initializeApp(firebaseConfig);
-// const db = getFirestore(firebaseApp); // Создание Firestore объекта
-
-// export { firebaseApp, db };
 
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore';
