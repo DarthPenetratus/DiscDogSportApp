@@ -4,10 +4,12 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 
-import Screen1 from '../screens/Screen1'
-import Screen2 from '../screens/Screen2';
-import Screen3 from '../screens/Screen3';
-import Screen4 from '../screens/Screen4';
+import FieldSelection from '../screens/FieldSelection';
+import Participants from '../screens/Participants';
+import Summary from '../screens/Summary';
+
+import FieldScreen from '../screens/FieldScreen';
+
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -15,10 +17,10 @@ const Tab = createMaterialTopTabNavigator();
 export default function TabBarNavigator() {
     return (
         <Tab.Navigator>
-          <Tab.Screen name="Screen 1" component={Screen1} />
-          <Tab.Screen name="Screen 2" component={Screen2} />
-          <Tab.Screen name="Screen 3" component={Screen3} />
-          <Tab.Screen name="Screen 4" component={Screen4} />
+          <Tab.Screen name="Field Selection" component={FieldSelection} />
+          <Tab.Screen name="Participants" component={Participants} />
+          <Tab.Screen name="Summary" component={Summary} />
+          <Tab.Screen name="FieldScreen" component={FieldScreen} />
         </Tab.Navigator>
     );
   }

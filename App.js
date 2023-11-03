@@ -4,10 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-// Navigation
+
 import Menu from './navigation/Menu';
 
-// Components
+
 import Header from './components/Header';
 
 export default function App() {
