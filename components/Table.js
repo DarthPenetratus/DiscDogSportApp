@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+
+// const getResponsiveFontSize = () => {
+//   const screenWidth = Dimensions.get('window').width
+//   const baseFontSize = 20
+//   const scaleFactor = 0.002
+
+//   return baseFontSize + scaleFactor * screenWidth;
+// }
 
 const Table = ({ data }) => {
-
+  
 
   return (
     <View style={styles.container}>
@@ -50,6 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: 'lightgray',
+    flex: 1
   },
   cell: {
     flex: 1,
@@ -68,10 +77,10 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: 20, // getResponsiveFontSize(),
   },
   contentText: {
-    fontSize: 20,
+    fontSize: 20, // getResponsiveFontSize(),
   }
 });
 

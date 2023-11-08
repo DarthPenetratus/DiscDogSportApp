@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native'
+import backgroundImage from '../assets/field.jpg'
 
 
 let counter = 0;
@@ -17,7 +18,7 @@ const Field = ({ onUpdateData }) => {
         if (index > 35)
             points = 3;
         const data = {
-            number: `${counter}`,
+            number: counter,
             throw: '✔️',
             distance: `${index}`,
             points: `${points}`,
@@ -50,7 +51,9 @@ const Field = ({ onUpdateData }) => {
 
     return (
         <View style={styles.container}>
-            {buttons}
+            <ImageBackground resizeMode="stretch" style={styles.backgroundImage} source={backgroundImage}>
+                {buttons}
+            </ImageBackground>
         </View>
     )
 }
@@ -58,17 +61,19 @@ const Field = ({ onUpdateData }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        margin: 16,
+    },
+    backgroundImage: {
+        flex: 1,
         flexDirection: 'row',
-        margin: 32,
-        borderColor: 'black',
-        borderWidth: 3,
-        borderStyle: 'solid',
+        width: '100%',
+        height: '100%',
+    },
+    buttonContainer: {
+        
     },
     button: {
         flex: 1,
-        borderColor: 'black',
-        borderWidth: 1,
-        borderStyle: 'solid',
     },
     sideBoldButton: {
         flex: 1,
@@ -82,7 +87,9 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         borderWidth: 1,
         borderStyle: 'solid',
-        backgroundColor: '#0AA6D7'
+        backgroundColor: '#0AA6D7',
+        marginTop: 2,
+        marginBottom: 1
     }
 })
 

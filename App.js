@@ -6,7 +6,7 @@ import FieldScreen from './views/FieldScreen';
 
 export default function App() {
   return (
-    <FieldScreen/>
+    <FieldScreen throws={10} competitionName={"Insert competition name"} />
   );
 }
 
